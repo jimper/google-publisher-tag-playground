@@ -52,7 +52,7 @@ const strings = {
 
 // Playground component identifier.
 const PLAYGROUND_ID = 'gpt-sample';
-const PLAYGROUND_SANDBOX_URL = '/service/playground-elements';
+const PLAYGROUND_SANDBOX_URL = '../service/playground-elements';
 
 /**
  * Custom GPT Playground component.
