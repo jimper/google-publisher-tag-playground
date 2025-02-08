@@ -100,6 +100,18 @@ export default [
             src: ['site/*', '!site/js'],
             dest: 'dist',
           },
+          {
+            src: [
+              'node_modules/playground-elements/playground-service-worker-proxy.html',
+              'node_modules/playground-elements/playground-service-worker.js',
+            ],
+            dest: 'dist/service',
+            transform: contents => {
+              return contents
+                .toString()
+                .replace(/parent\.window\.console\.warn\(.*?\)/g, '');
+            },
+          },
         ],
         flatten: false,
       }),

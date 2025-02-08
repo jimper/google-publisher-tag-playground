@@ -52,6 +52,7 @@ const strings = {
 
 // Playground component identifier.
 const PLAYGROUND_ID = 'gpt-sample';
+const PLAYGROUND_SANDBOX_URL = '/service/playground-elements';
 
 /**
  * Custom GPT Playground component.
@@ -184,7 +185,7 @@ export class GptPlayground extends LitElement {
   previewWindow: Window | null = null;
 
   /**
-   * Disconnect the preview pane and display the preview dialog.
+   * Disconnect the preview pane and display the preview diaalog.
    */
   disablePreview() {
     if (this.preview) this.preview.project = '';
@@ -209,6 +210,7 @@ export class GptPlayground extends LitElement {
         id="${PLAYGROUND_ID}"
         .config="${this.config}"
         project-src="${ifDefined(this.projectSrc)}"
+        .sandboxBaseUrl="${PLAYGROUND_SANDBOX_URL}"
       >
       </playground-project>
 
